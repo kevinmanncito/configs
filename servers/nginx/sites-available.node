@@ -1,0 +1,17 @@
+# An example of how to use NGINX as a reverse proxy for a node app
+
+server {
+    listen 80;
+    
+    # XXX: Change this
+    server_name domainname.com;
+
+    location / {
+        proxy_set_header    X-real-IP $remote_addr;
+        proxy_set_header    Host      $http_host;
+
+        # XXX: Change the port to match your node app port number
+        proxy_pass          http://127.0.0.1:2368;
+
+    }
+}

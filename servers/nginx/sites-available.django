@@ -1,0 +1,27 @@
+# A nginx server config for a django app
+
+server {
+    listen 80;
+
+    # XXX: Change this to match domain name
+    server_name domainname.com www.domainname.com;
+
+    access_log off;
+
+    location /static/ {
+
+        # XXX: Change this to match location of static folder
+        # Usually: /opt/projectname/static
+        alias /path/to/static/folder/static/;
+    }
+
+    location / {
+
+        # XXX: Change port number to match gunicorn command
+        proxy_pass http://127.0.0.1:8000;
+        
+        proxy_set_header X-Forwarded-Host $server_name;
+        proxy_set_header X-Real-IP $remote_addr;
+        add_header P3P 'CP="ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV"';
+    }
+}

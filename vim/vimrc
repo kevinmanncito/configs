@@ -1,0 +1,14 @@
+" Simple .vimrc file by Kevin Mann - 01/22/2014
+
+" Turn on syntax highlighting
+syntax on
+
+" Get the tabbing right
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Turn on the line numbers
+set number
+set ruler

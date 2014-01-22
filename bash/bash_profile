@@ -1,0 +1,23 @@
+# Set architecture flags
+export ARCHFLAGS="-arch x86_64"
+
+# Ensure user-installed binaries take precedence
+export PATH=/usr/local/bin:/bin:/sbin:/usr/bin:/usr/local/sbin:$PATH
+export EDITOR='subl -w'
+
+# Load .bashrc if it exists
+test -f ~/.bashrc && source ~/.bashrc
+
+# Better colors for terminal
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# Some aliases I commonly use
+alias mdev='sshfs kmann@pydev2.herm.co:/home/kmann/projects /Users/kevinmann/Mounts/Dev'
+alias dev='ssh pydev2'
+alias taxstage='ssh dev.taxbot.com'
+alias taxprod='ssh taxbot.com'
+alias drop='ssh kevin@kevinrmann.com'
+alias mdrop='sshfs kevin@kevinrmann.com:/ ~/Mounts/Droplet'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias geo='/Users/kevin/Software/NatGeo-Downloader/downloader.py &'
