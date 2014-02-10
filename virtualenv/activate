@@ -1,0 +1,4 @@
+# Add this to the bottom of the virtualenv activate call to be able to delete the manage.py file
+# and just use django-admin.py instead
+export PYTHONPATH=~/projects/[project-name]
+export DJANGO_SETTINGS_MODULE=[project-name].settings.settings
